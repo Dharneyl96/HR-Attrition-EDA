@@ -219,7 +219,7 @@ hr {
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("EDA DANIEL PRO.csv")
+    df = pd.read_csv("HR_Employee_Attrition_Dataset.csv")
     df.columns = df.columns.str.strip().str.lower()
     df['status'] = df['left'].map({0: 'Stayed', 1: 'Left'})
     df['promoted']  = df['promotion_last_5years'].map({0: 'Not Promoted', 1: 'Promoted'})
