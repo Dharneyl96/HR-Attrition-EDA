@@ -221,9 +221,10 @@ hr {
 def load_data():
     df = pd.read_csv("HR_Employee_Attrition_Dataset.csv")
     df.columns = df.columns.str.strip().str.lower()
-    df['satisfaction_level'] = df['satisfaction_level'].str.replace('%', '').astype(float)
-    df['Work_accident'] = pd.to_numeric(df['Work_accident'], errors='coerce').fillna(0).astype(int)
-    df['promotion_last_5years'] = pd.to_numeric(df['promotion_last_5years'], errors='coerce').fillna(0).astype(int)
+    df.columns = df.columns.str.strip().str.lower()
+df['satisfaction_level'] = df['satisfaction_level'].str.replace('%', '').astype(float)
+df['work_accident'] = pd.to_numeric(df['work_accident'], errors='coerce').fillna(0).astype(int)
+df['promotion_last_5years'] = pd.to_numeric(df['promotion_last_5years'], errors='coerce').fillna(0).astype(int)
     
     df.columns = df.columns.str.strip().str.lower()
     df['status'] = df['left'].map({0: 'Stayed', 1: 'Left'})
